@@ -67,7 +67,15 @@ This repository includes [.python-version](file:///Users/ijachi/Documents/nrs-ml
 
 1. Connect this GitHub repository (`IJACHI/nrs-modelops-mlflow`) to your Render account as a **Web Service**.
 2. Render will automatically detect `.python-version` (or set Environment Variable `PYTHON_VERSION=3.11.10`).
-3. Set the build and start commands:
-   - **Build Command**: `pip install -r requirements.txt`
-   - **Start Command**: `python app.py`
+3. Set the build and start commands in the Render Dashboard:
+
+   **Build Command**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+   **Start Command**:
+   ```bash
+   python app.py
+   ```
 4. Optionally attach a persistent disk mounted to `/app/mlruns` and store `mlflow.db` on persistent storage if run history persistence across redeploys is desired.
