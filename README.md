@@ -1,12 +1,12 @@
-# NRS ModelOps Platform (MLflow)
+# NRS MLOps (MLflow)
 
-Customized MLflow Tracking and ModelOps server tailored for NRS operational environments, supporting automated baseline dataset/metric seeding, corporate UI branding injection, and lightweight SQLite persistence.
+Customized MLflow Tracking and MLOps server tailored for NRS operational environments, supporting automated baseline dataset/metric seeding, corporate UI branding injection (NRS corporate logo, favicon, `#D42e12` primary theme & `#7D858b` secondary theme), and lightweight SQLite persistence.
 
 ---
 
 ## Features
 
-- **Automated UI Branding**: Dynamically brands the MLflow web interface with NRS titles and corporate logos without needing to recompile the React frontend.
+- **Automated UI Branding**: Dynamically brands the MLflow web interface as **NRS MLOps** with the official corporate logo, favicon, and `#D42e12` / `#7D858b` color scheme.
 - **Auto-Seeding Baseline Data**: Automatically seeds baseline operational models, governance tags, and metrics (Income Tax Risk Scorer, VAT Corporate Anomaly Detector) on fresh deployments.
 - **Zero-Configuration Deployment**: Runs as a self-contained web service ready for Render, Railway, Docker, or bare metal virtual machines.
 - **Persistent SQLite & Artifact Storage**: Uses a local SQLite database (`mlflow.db`) and artifact directory (`./mlruns`).
@@ -17,6 +17,7 @@ Customized MLflow Tracking and ModelOps server tailored for NRS operational envi
 
 ```
 ├── app.py              # Main entrypoint: UI injection, seeding daemon, and MLflow server
+├── assets/             # Brand assets (nrs_logo.png)
 ├── requirements.txt    # MLflow and machine learning dependencies
 ├── Procfile            # Deployment process definition (Render / Heroku)
 ├── .gitignore          # Ignores runtime artifacts (mlflow.db, mlruns, pycache)
