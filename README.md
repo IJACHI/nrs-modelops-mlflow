@@ -28,13 +28,14 @@ Customized MLflow Tracking and ModelOps server tailored for NRS operational envi
 ## Local Quickstart
 
 ### 1. Prerequisites
-- Python 3.9 - 3.11 (recommended)
+- Python 3.9 – 3.11 (e.g. `python3.10`). Python 3.13+ / 3.14+ is not recommended because MLflow and its C-extensions lack prebuilt wheels for pre-release Pythons.
 - `pip`
 
 ### 2. Setup Virtual Environment
 
 ```bash
-python3 -m venv .venv
+# Recommended: use Python 3.10
+python3.10 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
