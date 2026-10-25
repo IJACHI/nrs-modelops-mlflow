@@ -63,8 +63,11 @@ The application can be configured via environment variables:
 
 ## Deployment (Render / Cloud)
 
+This repository includes [.python-version](file:///Users/ijachi/Documents/nrs-mlflow/.python-version) and [render.yaml](file:///Users/ijachi/Documents/nrs-mlflow/render.yaml) preconfigured for **Python 3.11.10** (ensuring all MLflow and PyArrow binary wheels install instantly without requiring CMake compilation).
+
 1. Connect this GitHub repository (`IJACHI/nrs-modelops-mlflow`) to your Render account as a **Web Service**.
-2. Set the build and start commands:
+2. Render will automatically detect `.python-version` (or set Environment Variable `PYTHON_VERSION=3.11.10`).
+3. Set the build and start commands:
    - **Build Command**: `pip install -r requirements.txt`
    - **Start Command**: `python app.py`
-3. Optionally attach a persistent disk mounted to `/app/mlruns` and store `mlflow.db` on persistent storage if run history persistence across redeploys is desired.
+4. Optionally attach a persistent disk mounted to `/app/mlruns` and store `mlflow.db` on persistent storage if run history persistence across redeploys is desired.
