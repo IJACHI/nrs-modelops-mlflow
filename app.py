@@ -163,6 +163,9 @@ def auto_seed_embedded_data(port):
         print("Successfully seeded fresh embedded database data.", flush=True)
     except Exception as e:
         print(f"Error executing database injection thread: {e}", flush=True)
+    finally:
+        import gc
+        gc.collect()
 
 if __name__ == "__main__":
     hack_mlflow_ui()
@@ -173,13 +176,14 @@ if __name__ == "__main__":
 
     os.makedirs("./mlruns", exist_ok=True)
 
-    print(f"Step 3: Launching standalone NRS ModelOps Platform on 0.0.0.0:{port}...", flush=True)
+    print(f"Step 3: Launching standalone NRS ModelOps Platform on 0.0.0.0:{port} (single-worker lightweight mode)...", flush=True)
     cmd = [
         sys.executable, "-m", "mlflow", "server",
         "--backend-store-uri", sqlite_uri,
         "--default-artifact-root", "./mlruns",
         "--host", "0.0.0.0",
         "--port", str(port),
+        "--workers", "1",
         "--serve-artifacts"
     ]
 
