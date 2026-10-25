@@ -1,0 +1,27 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# MLflow local storage & artifacts
+mlflow.db
+mlflow.db-journal
+mlruns/
+.trash/
+
+# Environment files and credentials
+.env
+*.env.local
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
